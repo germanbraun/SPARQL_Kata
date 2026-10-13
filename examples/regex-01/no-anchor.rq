@@ -1,0 +1,5 @@
+# Without ^ the pattern matches an "a" anywhere in the name.
+SELECT ?name WHERE {
+  ?customer a ex:Customer ; ex:name ?name .
+  FILTER(REGEX(?name, "a", "i"))
+}

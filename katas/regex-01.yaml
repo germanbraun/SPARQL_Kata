@@ -1,0 +1,23 @@
+id: regex-01
+title: "Clientes cuyo nombre empieza con A"
+level: 1
+concepts: [FILTER, REGEX]
+
+prompt: |
+  Listá el nombre (ex:name) de los clientes (ex:Customer) cuyo nombre
+  empieza con la letra "a", sin importar mayúsculas o minúsculas.
+  Columnas: nombre.
+
+prefixes:
+  ex: "http://example.org/crm/"
+
+datasets:
+  visible: data/crm.ttl
+  hidden: [data/names-hidden.ttl]
+
+reference: |
+  SELECT ?name WHERE {
+    ?customer a ex:Customer ;
+              ex:name ?name .
+    FILTER(REGEX(?name, "^a", "i"))
+  }

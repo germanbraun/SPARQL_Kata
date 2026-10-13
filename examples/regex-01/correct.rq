@@ -1,0 +1,4 @@
+SELECT ?n WHERE {
+  ?c a ex:Customer ; ex:name ?n .
+  FILTER(REGEX(?n, "^a", "i"))
+}

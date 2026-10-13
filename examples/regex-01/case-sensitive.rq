@@ -1,0 +1,5 @@
+# Passes the visible data ("Ana"), but without the "i" flag it misses "alberto".
+SELECT ?name WHERE {
+  ?customer a ex:Customer ; ex:name ?name .
+  FILTER(REGEX(?name, "^A"))
+}

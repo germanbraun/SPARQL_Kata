@@ -1,0 +1,11 @@
+# Hidden dataset for regex-01: names starting with "a" in different cases
+# and with a language tag, plus names that only contain an "a".
+@prefix ex: <http://example.org/crm/> .
+
+ex:alberto a ex:Customer ; ex:name "alberto" .
+ex:andrea  a ex:Customer ; ex:name "ANDREA" .
+ex:amalia  a ex:Customer ; ex:name "Amalia"@es .
+ex:lara    a ex:Customer ; ex:name "Lara" .
+ex:mariana a ex:Customer ; ex:name "Mariana" .
+ex:paula   a ex:Customer ; ex:name "Paula" .
+ex:hugo    a ex:Customer ; ex:name "Hugo" .
