@@ -1,0 +1,3 @@
+SELECT ?order ?total WHERE {
+  ?order a ex:Order ; ex:total ?total .
+}

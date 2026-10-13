@@ -1,0 +1,5 @@
+# Compares text, not numbers: "120.50" < "50" because "1" < "5".
+SELECT ?order ?total WHERE {
+  ?order a ex:Order ; ex:total ?total .
+  FILTER(STR(?total) > "50")
+}

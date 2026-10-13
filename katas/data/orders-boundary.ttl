@@ -1,0 +1,12 @@
+# Hidden dataset for filter-01: totals right at the threshold of 50,
+# in mixed numeric types, so ">=" and text comparisons get caught.
+@prefix ex:  <http://example.org/crm/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:order20 a ex:Order ; ex:total "50"^^xsd:integer .
+ex:order21 a ex:Order ; ex:total "5.0E1"^^xsd:double .
+ex:order22 a ex:Order ; ex:total "49.99"^^xsd:decimal .
+ex:order23 a ex:Order ; ex:total "50.01"^^xsd:decimal .
+ex:order24 a ex:Order ; ex:total "60"^^xsd:integer .
+ex:order25 a ex:Order ; ex:total "75"^^xsd:decimal .
+ex:order26 a ex:Order ; ex:total "1.0E2"^^xsd:double .

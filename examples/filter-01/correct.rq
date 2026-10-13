@@ -1,0 +1,4 @@
+SELECT ?o ?t WHERE {
+  ?o a ex:Order ; ex:total ?t .
+  FILTER(?t > 50)
+}

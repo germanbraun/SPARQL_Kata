@@ -1,0 +1,5 @@
+# Passes the visible data, but a total of exactly 50 is not "more than 50".
+SELECT ?order ?total WHERE {
+  ?order a ex:Order ; ex:total ?total .
+  FILTER(?total >= 50)
+}

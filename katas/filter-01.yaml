@@ -1,0 +1,22 @@
+id: filter-01
+title: "Pedidos de más de 50"
+level: 1
+concepts: [FILTER]
+
+prompt: |
+  Listá los pedidos (ex:Order) cuyo total (ex:total) sea mayor a 50.
+  Columnas: pedido, total.
+
+prefixes:
+  ex: "http://example.org/crm/"
+
+datasets:
+  visible: data/crm.ttl
+  hidden: [data/orders-boundary.ttl]
+
+reference: |
+  SELECT ?order ?total WHERE {
+    ?order a ex:Order ;
+           ex:total ?total .
+    FILTER(?total > 50)
+  }

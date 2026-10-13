@@ -19,13 +19,13 @@ def run(kata_name, solution_name):
     return grade(kata, query)
 
 
-@pytest.mark.parametrize("kata_name", ["optional-01", "distinct-01", "join-01"])
+@pytest.mark.parametrize("kata_name", ["optional-01", "distinct-01", "join-01", "filter-01"])
 def test_reference_passes_itself(kata_name):
     kata = load_kata(ROOT / "katas" / f"{kata_name}.yaml")
     assert grade(kata, kata.reference).passed
 
 
-@pytest.mark.parametrize("kata_name", ["optional-01", "distinct-01", "join-01"])
+@pytest.mark.parametrize("kata_name", ["optional-01", "distinct-01", "join-01", "filter-01"])
 def test_correct_solutions_pass(kata_name):
     assert run(kata_name, "correct").passed
 
@@ -39,6 +39,9 @@ def test_correct_solutions_pass(kata_name):
         ("distinct-01", "hardcoded", hints.OVERFITTED),
         ("join-01", "wrong-join", hints.JOIN_EXPLOSION),
         ("join-01", "no-order", hints.WRONG_ORDER),
+        ("filter-01", "no-filter", hints.EXTRA_ROWS),
+        ("filter-01", "string-compare", hints.MISSING_ROWS),
+        ("filter-01", "greater-or-equal", hints.OVERFITTED),
     ],
 )
 def test_wrong_solutions_get_the_right_hint(kata_name, solution, expected_first_symptom):
