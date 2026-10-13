@@ -1,0 +1,28 @@
+id: join-01
+title: "Pedidos con el nombre del cliente"
+level: 2
+concepts: [joins, ORDER BY]
+
+prompt: |
+  Listá cada pedido (ex:Order) con el nombre de su cliente y el total (ex:total),
+  ordenados por total de mayor a menor.
+  Columnas: pedido, nombre, total.
+
+prefixes:
+  ex: "http://example.org/crm/"
+
+datasets:
+  visible: data/crm.ttl
+  hidden: [data/crm-hidden-1.ttl]
+
+reference: |
+  SELECT ?order ?name ?total WHERE {
+    ?order a ex:Order ;
+           ex:customer ?customer ;
+           ex:total ?total .
+    ?customer ex:name ?name .
+  }
+  ORDER BY DESC(?total)
+
+grading:
+  order_sensitive: true

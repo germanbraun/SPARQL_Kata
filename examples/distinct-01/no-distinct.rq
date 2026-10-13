@@ -1,0 +1,1 @@
+SELECT ?city WHERE { ?c a ex:Customer ; ex:city ?city }

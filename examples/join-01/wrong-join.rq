@@ -1,0 +1,6 @@
+# ?x is not connected to the order: every order gets every name.
+SELECT ?order ?name ?total WHERE {
+  ?order a ex:Order ; ex:customer ?c ; ex:total ?total .
+  ?x ex:name ?name .
+}
+ORDER BY DESC(?total)

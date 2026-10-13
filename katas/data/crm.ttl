@@ -1,0 +1,11 @@
+# Visible dataset: a small CRM "silo".
+@prefix ex:  <http://example.org/crm/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:ana   a ex:Customer ; ex:name "Ana"   ; ex:email "ana@example.org"   ; ex:city ex:Cordoba .
+ex:bruno a ex:Customer ; ex:name "Bruno"                                ; ex:city ex:Cordoba .
+ex:carla a ex:Customer ; ex:name "Carla" ; ex:email "carla@example.org" ; ex:city ex:Rosario .
+
+ex:order1 a ex:Order ; ex:customer ex:ana   ; ex:total "120.50"^^xsd:decimal .
+ex:order2 a ex:Order ; ex:customer ex:carla ; ex:total "80"^^xsd:decimal .
+ex:order3 a ex:Order ; ex:customer ex:ana   ; ex:total "15"^^xsd:decimal .

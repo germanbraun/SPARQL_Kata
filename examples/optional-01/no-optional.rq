@@ -1,0 +1,5 @@
+SELECT ?name ?email WHERE {
+  ?customer a ex:Customer ;
+            ex:name ?name ;
+            ex:email ?email .
+}

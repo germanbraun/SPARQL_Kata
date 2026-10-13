@@ -1,0 +1,13 @@
+# Hidden dataset: different people, a new city, more missing emails,
+# a customer with two emails, a language-tagged name and mixed numeric types.
+@prefix ex:  <http://example.org/crm/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:diego a ex:Customer ; ex:name "Diego"                                          ; ex:city ex:Mendoza .
+ex:elena a ex:Customer ; ex:name "Elena"@es ; ex:email "elena@example.org" , "e.ruiz@example.org" ; ex:city ex:Cordoba .
+ex:fede  a ex:Customer ; ex:name "Fede"     ; ex:email "fede@example.org"           ; ex:city ex:Mendoza .
+ex:gabi  a ex:Customer ; ex:name "Gabi"                                           ; ex:city ex:Rosario .
+
+ex:order10 a ex:Order ; ex:customer ex:diego ; ex:total "200"^^xsd:integer .
+ex:order11 a ex:Order ; ex:customer ex:elena ; ex:total "35.5"^^xsd:decimal .
+ex:order12 a ex:Order ; ex:customer ex:fede  ; ex:total "1.0E1"^^xsd:double .

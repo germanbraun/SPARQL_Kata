@@ -1,0 +1,35 @@
+id: optional-01
+title: "Clientes y su email (si lo tienen)"
+level: 2
+concepts: [OPTIONAL]
+
+prompt: |
+  Listá todos los clientes (ex:Customer) con su nombre (ex:name) y,
+  si lo tienen, su email (ex:email).
+  Columnas: nombre, email.
+
+prefixes:
+  ex: "http://example.org/crm/"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+
+datasets:
+  visible: data/crm.ttl
+  hidden:
+    - data/crm-hidden-1.ttl
+
+reference: |
+  SELECT ?name ?email WHERE {
+    ?customer a ex:Customer ;
+              ex:name ?name .
+    OPTIONAL { ?customer ex:email ?email }
+  }
+
+grading:
+  order_sensitive: false
+  column_mapping: positional
+
+# Optional: override the default hint texts for this kata.
+hints:
+  missing_optional:
+    es: "Algunos clientes no aparecen. ¿Qué pasa con los que no tienen email?"
+    en: "Some customers are missing. What happens to those without an email?"

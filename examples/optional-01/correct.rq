@@ -1,0 +1,4 @@
+SELECT ?n ?mail WHERE {
+  ?c a ex:Customer ; ex:name ?n .
+  OPTIONAL { ?c ex:email ?mail }
+}

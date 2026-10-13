@@ -1,0 +1,21 @@
+id: distinct-01
+title: "Ciudades con clientes"
+level: 1
+concepts: [DISTINCT]
+
+prompt: |
+  ¿En qué ciudades (ex:city) hay clientes? Cada ciudad debe aparecer una sola vez.
+  Columnas: ciudad.
+
+prefixes:
+  ex: "http://example.org/crm/"
+
+datasets:
+  visible: data/crm.ttl
+  hidden: [data/crm-hidden-1.ttl]
+
+reference: |
+  SELECT DISTINCT ?city WHERE {
+    ?customer a ex:Customer ;
+              ex:city ?city .
+  }

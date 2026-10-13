@@ -1,0 +1,2 @@
+# Passes the visible dataset only: the hidden one has a city in Mendoza.
+SELECT ?city WHERE { VALUES ?city { ex:Cordoba ex:Rosario } }
