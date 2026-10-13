@@ -1,0 +1,5 @@
+# EXISTS keeps the customers that do have an email: the opposite set.
+SELECT ?name WHERE {
+  ?customer a ex:Customer ; ex:name ?name .
+  FILTER EXISTS { ?customer ex:email ?email }
+}

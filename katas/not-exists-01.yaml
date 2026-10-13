@@ -1,0 +1,23 @@
+id: not-exists-01
+title: "Clientes sin email"
+level: 2
+concepts: [FILTER NOT EXISTS]
+
+prompt: |
+  Listá el nombre (ex:name) de los clientes (ex:Customer) que no tienen
+  ningún email (ex:email). Pista: FILTER NOT EXISTS.
+  Columnas: nombre.
+
+prefixes:
+  ex: "http://example.org/crm/"
+
+datasets:
+  visible: data/crm.ttl
+  hidden: [data/crm-hidden-1.ttl]
+
+reference: |
+  SELECT ?name WHERE {
+    ?customer a ex:Customer ;
+              ex:name ?name .
+    FILTER NOT EXISTS { ?customer ex:email ?email }
+  }

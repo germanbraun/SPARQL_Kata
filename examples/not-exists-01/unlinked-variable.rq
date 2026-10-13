@@ -1,0 +1,5 @@
+# ?x is not the customer: someone has an email, so NOT EXISTS is always false.
+SELECT ?name WHERE {
+  ?customer a ex:Customer ; ex:name ?name .
+  FILTER NOT EXISTS { ?x ex:email ?email }
+}

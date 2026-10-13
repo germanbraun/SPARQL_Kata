@@ -1,0 +1,4 @@
+SELECT ?n WHERE {
+  ?c a ex:Customer ; ex:name ?n .
+  FILTER NOT EXISTS { ?c ex:email ?e }
+}
