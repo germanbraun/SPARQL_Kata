@@ -1,5 +1,7 @@
 # sparql-kata
 
+[![Tests](https://github.com/germanbraun/SPARQL_Kata/actions/workflows/tests.yml/badge.svg)](https://github.com/germanbraun/SPARQL_Kata/actions/workflows/tests.yml)
+
 Grade SPARQL exercises by **what the query returns**, not by how it is written,
 and give students hints about common mistakes (missing `OPTIONAL`, missing
 `DISTINCT`, disconnected patterns, wrong `ORDER BY`, hardcoded answers...).
