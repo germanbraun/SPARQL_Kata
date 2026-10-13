@@ -26,9 +26,12 @@ Hints:
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
-pip install -e ".[dev]"
+pip install -e ".[dev]"          # or: pip install -r requirements-dev.txt
 pytest
 ```
+
+New here? [ONBOARDING.md](ONBOARDING.md) walks through installing and grading
+your first kata step by step.
 
 ## Usage
 
